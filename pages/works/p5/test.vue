@@ -28,6 +28,10 @@ export default {
         const y = p5.sin(p5.radians(degree)) * 50
         p5.push()
         p5.translate(0, p5.height / 2)
+        const r = p5.random(0, 255)
+        const g = p5.random(0, 255)
+        const b = p5.random(0, 255)
+        p5.fill(r, g, b)
         p5.ellipse(posX, y, 50, 50)
         p5.pop()
         posX += speed
