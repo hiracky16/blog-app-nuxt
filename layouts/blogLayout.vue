@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="main">
     <Header />
-    <div class="main">
+    <div class="content">
       <nuxt />
     </div>
     <Footer />
@@ -22,7 +22,10 @@ export default {
 
 <style>
 .main {
-  display: block;
-  padding: 80px 0 0 0;
+  height: 100vh;
+  position: block;
+}
+.content {
+  margin: 80px 0 0 0;
 }
 </style>

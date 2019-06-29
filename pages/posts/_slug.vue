@@ -46,6 +46,7 @@ export default {
 article.article {
   padding: 10px;
   background: rgb(12, 22, 28);
+  height: 100vh;
   .single {
     max-width: 900px;
     margin: 0 auto;

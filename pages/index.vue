@@ -53,6 +53,7 @@ export default {
 section.latest-posts {
   display: block;
   background-color: rgb(12, 22, 28);
+  height: 100vh;
   .posts {
     max-width: 900px;
     margin: 0 auto;
