@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import P5 from 'p5'
 export default {
   data() {
     return {
@@ -40,7 +41,6 @@ export default {
         }
       }
     }
-    const P5 = require('p5')
     const p5obj = new P5(script) // eslint-disable-line no-unused-vars
   }
 }

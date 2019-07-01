@@ -20,6 +20,7 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
 import client from '~/plugins/contentful'
 export default {
   asyncData({ params }) {
@@ -29,6 +30,7 @@ export default {
         order: '-sys.createdAt'
       })
       .then(entries => {
+        console.log(entries.items)
         return { posts: entries.items }
       })
       .catch(e => {})
