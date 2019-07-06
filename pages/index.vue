@@ -79,7 +79,7 @@ section.latest-posts {
       @media (min-width: (768px)) {
         width: calc(100% / 3 - 20px);
       }
-      height: 196px;
+      height: calc(100% / 3 - 20px);
       margin: 10px;
       background: rgb(12, 22, 28);
       text-decoration: none;
@@ -92,7 +92,7 @@ section.latest-posts {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 196px;
+        height: calc(100% / 3 - 20px);
         width: 100%;
         padding-bottom: 75%;
         position: relative;
