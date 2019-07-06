@@ -6,23 +6,19 @@
 </template>
 
 <style>
-footer {
-  height: 70px;
-  width: 100%;
-  padding: 30px 0;
-  position: relative; /*←絶対位置*/
-  bottom: 0; /*下に固定*/
-}
 .site-footer {
   background: rgba(36, 45, 51);
   width: 100%;
-  height: 70px;
+  height: 50px;
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }
 .copyright {
   color: #fff;
   font-size: 12px;
   text-align: right;
-  padding-top: 15px;
+  vertical-align: middle;
+  padding-top: 5px;
   padding-right: 15px;
 }
 

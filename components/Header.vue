@@ -3,12 +3,9 @@
     <header>
       <div class="line"></div>
       <nav class="gnav">
-        <a href="/">
-          <img src="../static/title.png" />
-        </a>
         <h1 class="site-logo">
           <a href="/">
-            Web メディア研究所
+            <img src="../static/title.png" />
           </a>
         </h1>
         <ul>
@@ -37,7 +34,7 @@
 header {
   background: rgba(36, 45, 51);
   width: 100%;
-  height: 80px;
+  height: 70px;
   z-index: 9999;
   /* box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25); */
   left: 0px;

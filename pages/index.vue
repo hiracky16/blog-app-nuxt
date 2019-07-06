@@ -7,12 +7,17 @@
         :to="'posts/' + post.fields.slug"
         class="post"
       >
-        <div class="thumb">
-          <img :src="post.fields.image.fields.file.url" />
-        </div>
-        <div class="post-text">
-          <p>{{ formatDate(post.sys.createdAt) }}</p>
-          <h2>{{ post.fields.title }}</h2>
+        <div
+          class="thumb"
+          :style="{
+            backgroundImage: 'url(' + post.fields.image.fields.file.url + ')'
+          }"
+        >
+          <!-- <img :src="post.fields.image.fields.file.url" /> -->
+          <div class="post-text">
+            <p>{{ formatDate(post.sys.createdAt) }}</p>
+            <h2>{{ post.fields.title }}</h2>
+          </div>
         </div>
       </nuxt-link>
     </div>
@@ -23,6 +28,11 @@
 /* eslint-disable no-console */
 import client from '~/plugins/contentful'
 export default {
+  computed: {
+    image_src(post) {
+      return post.fields.image.fields.file.url
+    }
+  },
   asyncData({ params }) {
     return client
       .getEntries({
@@ -55,7 +65,7 @@ export default {
 section.latest-posts {
   display: block;
   background-color: rgb(12, 22, 28);
-  height: 100vh;
+  height: 90vh;
   .posts {
     max-width: 900px;
     margin: 0 auto;
@@ -65,34 +75,39 @@ section.latest-posts {
     flex-wrap: wrap;
     background: rgb(12, 22, 28);
     a.post {
-      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
-      border-radius: 10px;
       width: calc(100% / 2 - 20px);
       @media (min-width: (768px)) {
         width: calc(100% / 3 - 20px);
       }
+      height: 196px;
       margin: 10px;
-      background: #fff;
+      background: rgb(12, 22, 28);
       text-decoration: none;
       color: #111;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
       .thumb {
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 196px;
         width: 100%;
         padding-bottom: 75%;
         position: relative;
         overflow: hidden;
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          max-width: 100%;
-        }
       }
       .post-text {
         padding: 5px 10px 10px;
+        position: absolute;
+        z-index: 10000;
+        color: rgba(255, 255, 255, 0.7);
+        bottom: 2.55%;
         h2 {
           width: fit-content;
           font-size: 20px;
+          color: rgba(255, 255, 255, 0.7);
         }
       }
     }

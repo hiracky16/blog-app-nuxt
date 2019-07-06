@@ -22,10 +22,9 @@ export default {
 
 <style>
 .main {
-  height: 100vh;
   position: block;
 }
 .content {
-  margin: 80px 0 0 0;
+  margin: 70px 0 0 0;
 }
 </style>

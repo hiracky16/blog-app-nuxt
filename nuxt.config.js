@@ -53,7 +53,8 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    vendor: ['p5']
   },
   markdownit: {
     injected: true,
